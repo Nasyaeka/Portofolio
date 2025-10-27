@@ -1,17 +1,19 @@
 /* ===== THEME TOGGLE ===== */
 .theme-toggle {
-  font-size: 1.5rem;
+  position: absolute;
+  right: 80px;
+  top: 20px;
+  font-size: 1.6rem;
   cursor: pointer;
-  margin-left: auto;
-  color: #333;
-  transition: color 0.3s ease;
+  color: var(--accent-color);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .theme-toggle:hover {
-  color: #ff69b4;
+  transform: scale(1.1);
 }
 
-/* ===== LIGHT MODE (default) ===== */
+/* ===== MODE TERANG (default) ===== */
 :root {
   --bg-color: #ffffff;
   --text-color: #333333;
@@ -19,15 +21,15 @@
   --navbar-bg: #f7f7f7;
 }
 
-/* ===== DARK MODE ===== */
+/* ===== MODE GELAP ===== */
 body.dark-mode {
   --bg-color: #0d1117;
   --text-color: #e6e6e6;
-  --accent-color: #ff8ccf;
+  --accent-color: #b380ff;
   --navbar-bg: #161b22;
 }
 
-/* ===== Apply Colors ===== */
+/* ===== APPLY COLOR ===== */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);

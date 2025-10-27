@@ -66,10 +66,10 @@ toggle.addEventListener('click', () => {
 });
 
 // ======== THEME TOGGLE ========
-const themeToggle = document.querySelector('.theme-toggle');
+const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Cek apakah sebelumnya user sudah pilih mode
+// Cek mode sebelumnya
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark-mode');
   themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
@@ -77,6 +77,7 @@ if (localStorage.getItem('theme') === 'dark') {
   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
 
+// Saat tombol diklik
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
 
