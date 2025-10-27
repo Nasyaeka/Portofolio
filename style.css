@@ -756,12 +756,15 @@ footer p {
 }
 
 /* 📱 Tablet Potrait (≤ 768px) */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
   .navbar {
-    flex-direction: row;        /* jangan column */
-    justify-content: space-between; /* logo kiri, toggle kanan */
-    align-items: center;
-    padding: 1rem 6%;
+    position: relative;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    top: 1.2rem;
+    right: 6%;
   }
 
 
