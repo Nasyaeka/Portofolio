@@ -56,34 +56,39 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
 });
 
-// ===== Toggle Menu =====
+// === TOGGLE MENU ===
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
+const themeIcon = document.getElementById("theme-icon");
 
+// Toggle navbar menu
 menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("active");
   menu.classList.toggle("show");
 });
 
-// ===== Dark / Light Mode =====
-const themeToggle = document.getElementById("theme-toggle");
+// === DARK/LIGHT MODE ===
 const body = document.body;
-const icon = themeToggle.querySelector("i");
 
-// Simpan preferensi di localStorage
+// Cek tema dari localStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
-  icon.classList.replace("fa-moon", "fa-sun");
+  themeIcon.classList.replace("fa-moon", "fa-sun");
 }
 
-themeToggle.addEventListener("click", () => {
+// Toggle mode
+themeIcon.addEventListener("click", (e) => {
+  e.stopPropagation(); // Biar nggak bentrok sama menu toggle
   body.classList.toggle("dark-mode");
 
   if (body.classList.contains("dark-mode")) {
-    icon.classList.replace("fa-moon", "fa-sun");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
     localStorage.setItem("theme", "dark");
   } else {
-    icon.classList.replace("fa-sun", "fa-moon");
+    themeIcon.classList.replace("fa-sun", "fa-moon");
     localStorage.setItem("theme", "light");
   }
+
+  // Efek animasi halus
+  body.style.transition = "background 0.4s ease, color 0.4s ease";
 });

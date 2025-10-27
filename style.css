@@ -14,13 +14,13 @@ body {
    ===== MODE GELAP =====
 ========================================= */
 body.dark-mode {
-  background-color: #1e1e1e;
+  background: linear-gradient(135deg, #121212, #1f1f1f);
   color: #f5f5f5;
 }
 
 body.dark-mode .navbar {
-  background: #2a2a2a;
-  color: #fff;
+  background: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode nav a {
@@ -28,10 +28,26 @@ body.dark-mode nav a {
 }
 
 body.dark-mode nav a:hover {
-  color: #fff;
+  color: #ffd54f;
 }
 
-body.dark-mode .theme-toggle {
+body.dark-mode .hero {
+  background: linear-gradient(120deg, #1b1b1b, #2a2a2a);
+}
+
+body.dark-mode .project-card,
+body.dark-mode .skill-card,
+body.dark-mode .contact-form {
+  background: #2a2a2a;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+  border-color: #444;
+}
+
+body.dark-mode footer {
+  background: #2c2c2c;
+}
+
+body.dark-mode .theme-toggle i {
   color: #fff;
 }
 
@@ -94,29 +110,15 @@ nav a:hover {
   color: #f48fb1;
 }
 
-/* ===== Tombol Gelap/Terang ===== */
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  color: #333;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.3s ease;
-  margin-left: 1rem;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
 /* =========================================
-   ===== TOGGLE MENU (UNTUK MOBILE) =====
+   ===== TOGGLE MENU + DARK MODE TOGGLE =====
 ========================================= */
 .menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
+  position: relative;
 }
 
 .menu-toggle span {
@@ -127,7 +129,7 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* Animasi toggle X */
+/* Animasi X */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -138,32 +140,30 @@ nav a:hover {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ===== Icon Tema di Dalam Toggle ===== */
+#theme-icon {
+  font-size: 1.2rem;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-icon:hover {
+  transform: translateY(-50%) scale(1.15);
+}
+
 /* =========================================
    ===== RESPONSIVE NAVBAR =====
 ========================================= */
 @media (max-width: 768px) {
-  .navbar {
-    position: relative;
-  }
-
-  /* Menu toggle aktif */
   .menu-toggle {
     display: flex;
-    position: absolute;
-    top: 1.2rem;
-    right: 1rem;
   }
 
-  /* Tombol tema pindah ke kiri toggle */
-  .theme-toggle {
-    position: absolute;
-    top: 1.2rem;
-    right: 3.8rem;
-    font-size: 1.3rem;
-    z-index: 1100;
-  }
-
-  /* Menu dropdown */
   nav {
     position: absolute;
     top: 70px;
@@ -209,26 +209,24 @@ nav a:hover {
   }
 }
 
-
 /* =========================================
-   ===== HERO SECTION (RAPIH & RESPONSIF) =====
+   ===== HERO SECTION =====
 ========================================= */
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  min-height: 75vh; /* ubah dari 85vh */
+  min-height: 75vh;
   padding: 3rem 8%;
   background: linear-gradient(120deg, #ffe6ef, #ffffff);
 }
 
-
 .hero-content {
-  animation: fadeInLeft 1s ease both;
   flex: 1;
   min-width: 320px;
   padding-right: 2rem;
+  animation: fadeInLeft 1s ease both;
 }
 
 .hero h1 {
@@ -252,6 +250,7 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
+/* Tombol */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -300,7 +299,6 @@ nav a:hover {
   animation: fadeInUp 1.2s ease forwards;
 }
 
-/* Gambar profil dengan animasi kombinasi */
 .profile-img {
   width: 100%;
   height: 100%;
@@ -311,369 +309,19 @@ nav a:hover {
   animation: fadeRotateIn 1s ease forwards, floatImage 4s ease-in-out infinite, glowPulse 3s ease-in-out infinite;
 }
 
-/* Efek melayang lembut */
+/* Efek animasi */
 @keyframes floatImage {
   0%, 100% {
     transform: translateY(0);
-    box-shadow: 0 0 25px rgba(244, 143, 177, 0.4);
   }
   50% {
     transform: translateY(-10px);
-    box-shadow: 0 0 35px rgba(244, 143, 177, 0.6);
   }
 }
 
-/* Efek muncul dan berputar lembut saat masuk */
 @keyframes fadeRotateIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9) rotate(-10deg);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05) rotate(5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-  }
-}
-
-/* Efek berdenyut lembut di bayangan */
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 25px rgba(244, 143, 177, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(244, 143, 177, 0.7);
-  }
-}
-
-
-
-/* =========================================
-   ===== ANIMASI MASUK (UNTUK SECTION) =====
-========================================= */
-
-/* Efek muncul dari bawah */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Efek muncul dari kanan */
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* =========================================
-   ===== SKILLS SECTION =====
-========================================= */
-.skills {
-  padding: 2rem 10%;
-  text-align: center;
-}
-
-.skills h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-card {
-  background: #fff0f5;
-  padding: 1.8rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.skill-card i {
-  font-size: 2rem;
-  color: #f48fb1;
-  margin-bottom: 0.8rem;
-}
-
-
-/* =========================================
-   ===== PROJECTS SECTION =====
-========================================= */
-.projects {
-  padding: 2rem 10%;
-  background: #fff5f8;
-  text-align: center;
-}
-
-.projects h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 2.5rem;
-}
-
-/* ===== Project Image ===== */
-.project-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.05);
-}
-
-
-/* ===== Project Grid ===== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
-/* ===== Project Card ===== */
-.project-card {
-  background: #ffffff;
-  padding: 2rem 2rem; /* sedikit lebar kanan kiri */
-  border-radius: 20px;
-  text-align: left;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  width: 100%;
-  max-width: 400px; /* 🔹 tambah lebar */
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* ===== Project Icon ===== */
-.project-icon {
-  font-size: 2rem;
-  color: #f48fb1;
-  margin-top: 1rem; /* 🔹 Tambahkan jarak dari gambar */
-  margin-bottom: 1rem;
-  display: block;
-}
-/* ===== Project Title ===== */
-.project-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 0.4rem;
-}
-
-/* ===== Company Name ===== */
-.company {
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 0.6rem;
-}
-
-/* ===== Project Description ===== */
-.description {
-  font-size: 0.96rem;
-  color: #555;
-  line-height: 1.75;
-  text-align: justify;
-  text-justify: inter-word;
-  margin-bottom: 1rem;
-  max-width: 100%;      /* 🔹 biar ngikut card, bukan fixed */
-  letter-spacing: 0.1px;
-  word-spacing: -0.5px;
-}
-
-/* ===== Tech Tags ===== */
-.tech-tags span {
-  display: inline-block;
-  background: #ffe6ef;
-  color: #f06292;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  margin: 0.3rem 0.4rem 0 0;
-}
-
-/* ===== View Button ===== */
-.btn-view {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #f48fb1;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.btn-view:hover {
-  background: #ec407a;
-  transform: translateY(-2px);
-}
-
-
-/* =========================================
-   ===== CONTACT SECTION =====
-========================================= */
-.contact {
-  padding: 2.5rem 10% 2rem; /* atas, kiri-kanan, bawah */
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.contact-subtitle {
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.contact-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.contact-card {
-  background: #fff0f5;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
-}
-
-.contact-card:hover {
-  background: #ffe6ef;
-  transform: translateY(-5px);
-}
-
-.contact-card a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.contact-card a:hover {
-  color: #f48fb1;
-}
-
-.contact-card i {
-  font-size: 1.2rem;
-}
-
-.contact-card:first-child i {
-  color: #f48fb1;
-}
-
-.contact-card:last-child i {
-  color: #25D366;
-  transform: scaleX(-1);
-}
-
-.contact-form {
-  background: #fff0f6;
-  border: 1.5px solid #ffcce0;
-  border-radius: 20px;
-  padding: 2.5rem;
-  max-width: 550px;
-  margin: 2.5rem auto 1rem; /* ubah dari 2.5rem auto → 2.5rem auto 1rem */
-  box-shadow: 0 6px 16px rgba(244, 143, 177, 0.15);
-  box-sizing: border-box;
-}
-
-
-
-/* ===== Form Group Spacing ===== */
-.contact-form .form-group {
-  margin-bottom: 1.3rem; /* Jarak antar input */
-}
-
-/* ===== Input & Textarea ===== */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1rem 1.2rem;
-  border: 1.5px solid #f8bbd0;
-  border-radius: 10px;
-  background-color: #fff;
-  font-size: 0.95rem;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  transition: all 0.3s ease;
-  resize: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #b96c8a;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #f48fb1;
-  box-shadow: 0 0 8px rgba(244, 143, 177, 0.3);
-  background-color: #fff8fb;
-}
-
-/* ===== Tombol ===== */
-.btn-send {
-  display: inline-block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.9rem 1.2rem;
-  background: linear-gradient(135deg, #f48fb1, #f06292);
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  margin-top: 0.5rem; /* jarak tambahan dari input terakhir */
-}
-
-.btn-send:hover {
-  background: linear-gradient(135deg, #ec407a, #f48fb1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(236, 64, 122, 0.25);
+  0% { opacity: 0; transform: scale(0.9) rotate(-10deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
 }
 
 /* =========================================
@@ -707,6 +355,7 @@ footer p {
 .social-links a:hover {
   color: #ffd9e4;
 }
+
 
 /* ===== SCROLL ANIMATION ===== */
 .reveal {
