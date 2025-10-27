@@ -617,35 +617,59 @@ footer p {
 }
 
 /* =========================================
-   ===== RESPONSIVE =====
+   ===== RESPONSIVE DESIGN (SEMUA PERANGKAT) 
 ========================================= */
+
+/* 🌐 Laptop & Desktop Medium (≤ 1200px) */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 3rem 6%;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* 💻 Tablet Landscape (≤ 1024px) */
 @media (max-width: 1024px) {
+  .navbar {
+    padding: 1.3rem 4%;
+  }
+
+  .navbar ul {
+    gap: 1.2rem;
+  }
+
   .hero {
     flex-direction: column-reverse;
     text-align: center;
     padding: 3rem 6%;
   }
 
+  .hero-content {
+    padding-right: 0;
+  }
+
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    text-align: center;
   }
 
   .profile-container {
     margin-bottom: 2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar ul {
-    gap: 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
   }
 
   .skills, .projects, .contact {
@@ -653,7 +677,68 @@ footer p {
   }
 
   .skills-grid, .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .contact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 📱 Tablet Potrait (≤ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 6%;
+  }
+
+  .navbar h1 {
+    font-size: 1.4rem;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2.5rem 5%;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .skills h2,
+  .projects h2,
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid,
+  .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    padding: 2rem;
   }
 
   .contact-cards {
@@ -661,38 +746,112 @@ footer p {
     align-items: center;
   }
 
-  .project-card {
-    max-width: 100%;
+  footer p {
+    font-size: 0.85rem;
   }
 }
 
-@media (max-width: 480px) {
+/* 📲 Smartphone Medium (≤ 576px) */
+@media (max-width: 576px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+
   .navbar {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.7rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.3rem;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
   }
 
   .hero {
     padding: 2rem 5%;
   }
 
-  .hero p {
-    font-size: 0.95rem;
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
   }
 
-  .project-btn, .cta-btn {
+  .hero p {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .project-btn,
+  .cta-btn {
     width: 100%;
     text-align: center;
+    padding: 0.9rem 1.2rem;
   }
 
   .profile-container {
-
-
-    
     width: 220px;
     height: 220px;
   }
+
+  .skills, .projects, .contact {
+    padding: 2rem 6%;
+  }
+
+  .skill-card,
+  .project-card,
+  .contact-form {
+    padding: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 0.8rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
 }
+
+/* 📱 Smartphone Kecil (≤ 400px) */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .navbar a {
+    font-size: 0.85rem;
+  }
+
+  .project-btn,
+  .cta-btn {
+    font-size: 0.85rem;
+  }
+
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .btn-send {
+    padding: 0.8rem 1rem;
+  }
+}
+
 
 
 
