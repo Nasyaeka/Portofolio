@@ -57,12 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== Toggle Navbar (untuk HP) =====
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
+const toggle = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.navbar nav');
 
-if (toggle && menu) {
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("show");
-    toggle.classList.toggle("active");
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+    toggle.classList.toggle('active');
   });
-}
