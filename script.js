@@ -56,14 +56,26 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
 });
 
-// ===== Toggle Navbar (untuk HP) =====
-const toggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('menu');
+/*===== SHOW MENU =====*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
 
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('active');
-  nav.classList.toggle('show');
-});
+/*===== MENU SHOW =====*/
+/* Validate if constant exists */
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
+
+/*===== MENU HIDDEN =====*/
+/* Validate if constant exists */
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
 
 // ======== THEME TOGGLE ========
 const themeToggle = document.getElementById('theme-toggle');
@@ -76,20 +88,6 @@ if (localStorage.getItem('theme') === 'dark') {
 } else {
   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
-
-// Saat tombol diklik
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-
-  if (body.classList.contains('dark-mode')) {
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    localStorage.setItem('theme', 'light');
-  }
-});
-
 
 // Saat tombol diklik
 themeToggle.addEventListener('click', () => {
