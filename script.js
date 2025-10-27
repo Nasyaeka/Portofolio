@@ -90,3 +90,17 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
+
+// Saat tombol diklik
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem('theme', 'light');
+  }
+});
+
