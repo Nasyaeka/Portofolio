@@ -61,28 +61,29 @@ const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 
 menuToggle.addEventListener("click", () => {
-  menu.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+  menu.classList.toggle("show");
 });
 
 // ===== Dark / Light Mode =====
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
+const icon = themeToggle.querySelector("i");
 
-// Cek mode tersimpan di localStorage
+// Simpan preferensi di localStorage
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
-  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  icon.classList.replace("fa-moon", "fa-sun");
 }
 
-// Ganti mode saat diklik
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
 
   if (body.classList.contains("dark-mode")) {
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    icon.classList.replace("fa-moon", "fa-sun");
     localStorage.setItem("theme", "dark");
   } else {
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    icon.classList.replace("fa-sun", "fa-moon");
     localStorage.setItem("theme", "light");
   }
 });

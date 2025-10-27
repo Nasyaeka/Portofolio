@@ -1,39 +1,18 @@
-/* ===== Mode Terang (default) ===== */
+/* =========================================
+   ===== MODE TERANG (DEFAULT) =====
+========================================= */
 body {
-  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
   color: #222;
-  transition: background 0.3s, color 0.3s;
+  background-color: #fff;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* ===== Navbar ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  color: #222;
-  padding: 1rem 8%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-/* Tombol Dark/Light */
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: #222;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-/* ===== Mode Gelap ===== */
+/* =========================================
+   ===== MODE GELAP =====
+========================================= */
 body.dark-mode {
   background-color: #1e1e1e;
   color: #f5f5f5;
@@ -44,83 +23,40 @@ body.dark-mode .navbar {
   color: #fff;
 }
 
+body.dark-mode nav a {
+  color: #ddd;
+}
+
+body.dark-mode nav a:hover {
+  color: #fff;
+}
+
 body.dark-mode .theme-toggle {
   color: #fff;
 }
 
-/* Link navbar dalam mode gelap */
-body.dark-mode nav ul li a {
-  color: #ddd;
-}
-
-body.dark-mode nav ul li a:hover {
-  color: #fff;
-}
-
-
 /* =========================================
-   ===== GENERAL STYLES =====
+   ===== NAVBAR =====
 ========================================= */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; 
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  background-color: #fff;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: #111;
-}
-
-p {
-  line-height: 1.8;
-  font-size: 1rem;
-  color: #555;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 1.6rem;
-  color: #f48fb1;
-}
-
-/* Tombol umum */
-.project-btn, .cta-btn {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-
-/* ===== NAVBAR ===== */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Logo kiri, toggle kanan */
   align-items: center;
-  padding: 1.8rem 6%;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
+  padding: 1.2rem 6%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+  gap: 1rem;
 }
 
-/* Logo kiri */
+/* ===== Logo ===== */
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
   font-weight: 700;
+  font-size: 1.5rem;
   color: #f48fb1;
   display: flex;
   align-items: center;
@@ -129,45 +65,20 @@ p {
 }
 
 .logo i {
-  font-size: 1.5rem;
   color: #f48fb1;
 }
 
-/* ===== TOGGLE ===== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background: #f48fb1;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Toggle animation jadi X */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ===== MENU NAVIGATION ===== */
-nav ul {
-  list-style: none;
+/* ===== Menu ===== */
+nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
   margin: 0;
   padding: 0;
 }
@@ -183,8 +94,76 @@ nav a:hover {
   color: #f48fb1;
 }
 
-/* ===== RESPONSIVE MODE ===== */
+/* ===== Tombol Gelap/Terang ===== */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================
+   ===== TOGGLE MENU (UNTUK MOBILE) =====
+========================================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #f48fb1;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi toggle X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =========================================
+   ===== RESPONSIVE NAVBAR =====
+========================================= */
 @media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+
+  /* Menu toggle aktif */
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+  }
+
+  /* Tombol tema pindah ke kiri toggle */
+  .theme-toggle {
+    position: absolute;
+    top: 1.2rem;
+    right: 3.8rem;
+    font-size: 1.3rem;
+    z-index: 1100;
+  }
+
+  /* Menu dropdown */
   nav {
     position: absolute;
     top: 70px;
@@ -209,17 +188,13 @@ nav a:hover {
   }
 
   nav a {
-    color: #333;
     padding: 0.5rem 0.8rem;
     border-radius: 8px;
+    color: #333;
   }
 
   nav a:hover {
     background: rgba(244, 143, 177, 0.2);
-  }
-
-  .menu-toggle {
-    display: flex;
   }
 
   @keyframes slideIn {
