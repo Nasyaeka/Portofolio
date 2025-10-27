@@ -41,7 +41,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 5%;
+  padding: 1.6rem 5%;
   background-color: var(--navbar-bg);
   transition: background-color 0.4s ease;
 }
