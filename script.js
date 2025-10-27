@@ -17,9 +17,18 @@ loadSection("contact-section", "contact.html");
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Tutup menu setelah diklik (untuk HP)
+    const menu = document.getElementById("menu");
+    const toggle = document.getElementById("menu-toggle");
+    if (menu && toggle) {
+      menu.classList.remove("show");
+      toggle.classList.remove("active");
+    }
   });
 });
 
@@ -46,3 +55,14 @@ window.addEventListener("scroll", revealOnScroll);
 document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
 });
+
+// ===== Toggle Navbar (untuk HP) =====
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+if (toggle && menu) {
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+    toggle.classList.toggle("active");
+  });
+}
