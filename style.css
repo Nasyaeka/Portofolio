@@ -56,6 +56,7 @@ p {
   z-index: 1000;
 }
 
+/* Kiri */
 .navbar-left h1 {
   font-family: 'Playfair Display', serif;
   font-size: 1.45rem;
@@ -67,19 +68,14 @@ p {
   gap: 0.5rem;
 }
 
-.navbar-left h1 i {
-  color: #f48fb1;
-  font-size: 1.5rem;
-}
-
-/* ===== NAVBAR KANAN ===== */
+/* Kanan */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-/* ===== MENU (DESKTOP) ===== */
+/* Menu desktop */
 .navbar-right nav ul {
   list-style: none;
   display: flex;
@@ -92,34 +88,19 @@ p {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  position: relative;
   transition: color 0.3s ease;
-}
-
-.navbar-right nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #f48fb1;
-  transition: width 0.3s ease;
 }
 
 .navbar-right nav a:hover {
   color: #f48fb1;
 }
 
-.navbar-right nav a:hover::after {
-  width: 100%;
-}
-
-/* ===== TOGGLE (HANYA MUNCUL DI HP) ===== */
+/* ===== TOGGLE ===== */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
 }
@@ -132,7 +113,7 @@ p {
   transition: all 0.3s ease;
 }
 
-/* Animasi burger jadi X */
+/* Animasi X */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -140,23 +121,22 @@ p {
   opacity: 0;
 }
 .menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== RESPONSIF (HP) ===== */
+/* ===== RESPONSIF ===== */
 @media (max-width: 768px) {
   .navbar-right nav {
     position: absolute;
     top: 70px;
     right: 6%;
     background: #fff0f5;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     display: none;
     flex-direction: column;
     align-items: flex-end;
     padding: 1rem 1.5rem;
-    animation: fadeIn 0.3s ease;
   }
 
   .navbar-right nav.show {
@@ -172,9 +152,8 @@ p {
   .navbar-right nav a {
     display: block;
     width: 100%;
-    color: #333;
-    font-size: 1rem;
     text-align: right;
+    color: #333;
     padding: 0.6rem 0.8rem;
     border-radius: 8px;
     transition: background 0.3s ease;
@@ -186,17 +165,6 @@ p {
 
   .menu-toggle {
     display: flex;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }
 
