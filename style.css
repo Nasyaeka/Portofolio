@@ -758,10 +758,12 @@ footer p {
 /* 📱 Tablet Potrait (≤ 768px) */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;        /* jangan column */
+    justify-content: space-between; /* logo kiri, toggle kanan */
+    align-items: center;
     padding: 1rem 6%;
   }
+}
 
   .navbar h1 {
     font-size: 1.4rem;
