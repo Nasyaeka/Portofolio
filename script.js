@@ -64,3 +64,28 @@ toggle.addEventListener('click', () => {
   toggle.classList.toggle('active');
   nav.classList.toggle('show');
 });
+
+// ======== THEME TOGGLE ========
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
+
+// Cek apakah sebelumnya user sudah pilih mode
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+} else {
+  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem('theme', 'light');
+  }
+});
+

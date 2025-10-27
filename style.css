@@ -1,3 +1,50 @@
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: #ff69b4;
+}
+
+/* ===== LIGHT MODE (default) ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #ff69b4;
+  --navbar-bg: #f7f7f7;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  --bg-color: #0d1117;
+  --text-color: #e6e6e6;
+  --accent-color: #ff8ccf;
+  --navbar-bg: #161b22;
+}
+
+/* ===== Apply Colors ===== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.navbar {
+  background-color: var(--navbar-bg);
+  transition: background-color 0.4s;
+}
+
+a, .project-btn, .cta-btn {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+
 /* =========================================
    ===== GENERAL STYLES =====
 ========================================= */
