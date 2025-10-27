@@ -56,37 +56,33 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
 });
 
-// ===== Toggle Navbar (untuk HP) =====
-const toggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('menu');
+// ===== Toggle Menu =====
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
 
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('active');
-  nav.classList.toggle('show');
+menuToggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
 });
 
-// ======== THEME TOGGLE ========
-const themeToggle = document.getElementById('theme-toggle');
+// ===== Dark / Light Mode =====
+const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Cek mode sebelumnya (disimpan di localStorage)
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-  themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-} else {
+// Cek mode tersimpan di localStorage
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
   themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
 
-// Saat tombol diklik
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+// Ganti mode saat diklik
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
 
-  if (body.classList.contains('dark-mode')) {
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    localStorage.setItem('theme', 'dark');
-  } else {
+  if (body.classList.contains("dark-mode")) {
     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    localStorage.setItem('theme', 'light');
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    localStorage.setItem("theme", "light");
   }
 });
-
