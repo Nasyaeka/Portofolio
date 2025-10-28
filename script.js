@@ -1,4 +1,6 @@
+// ================================
 // ===== Muat Section Secara Dinamis =====
+// ================================
 function loadSection(id, file) {
   fetch(file)
     .then(res => res.text())
@@ -11,9 +13,13 @@ function loadSection(id, file) {
 
 loadSection("skills-section", "skills.html");
 loadSection("projects-section", "projects.html");
+loadSection("education-section", "education.html");
 loadSection("contact-section", "contact.html");
 
+
+// ================================
 // ===== Smooth Scrolling =====
+// ================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -32,21 +38,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ================================
 // ===== Scroll Animation =====
+// ================================
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal");
 
-  for (let i = 0; i < reveals.length; i++) {
+  reveals.forEach(el => {
     const windowHeight = window.innerHeight;
-    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealTop = el.getBoundingClientRect().top;
     const revealPoint = 120;
 
     if (revealTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
+      el.classList.add("active");
     } else {
-      reveals[i].classList.remove("active");
+      el.classList.remove("active");
     }
-  }
+  });
 }
 
 window.addEventListener("scroll", revealOnScroll);
@@ -56,39 +64,87 @@ document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
 });
 
-// === TOGGLE MENU ===
-const menuToggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-const themeIcon = document.getElementById("theme-icon");
+// ================================
+// ===== Toggle Navbar (untuk HP) =====
+// ================================
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('menu');
 
-// Toggle navbar menu
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  menu.classList.toggle("show");
-});
-
-// === DARK/LIGHT MODE ===
-const body = document.body;
-
-// Cek tema dari localStorage
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark-mode");
-  themeIcon.classList.replace("fa-moon", "fa-sun");
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    nav.classList.toggle('show');
+  });
 }
 
-// Toggle mode
-themeIcon.addEventListener("click", (e) => {
-  e.stopPropagation(); // Biar nggak bentrok sama menu toggle
-  body.classList.toggle("dark-mode");
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  const icon = themeToggle.querySelector('i');
 
-  if (body.classList.contains("dark-mode")) {
-    themeIcon.classList.replace("fa-moon", "fa-sun");
-    localStorage.setItem("theme", "dark");
-  } else {
-    themeIcon.classList.replace("fa-sun", "fa-moon");
-    localStorage.setItem("theme", "light");
+  // Fungsi untuk mengatur tema berdasarkan preferensi
+  function setTheme(isDark) {
+    if (isDark) {
+      body.classList.add('dark');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      body.classList.remove('dark');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 
-  // Efek animasi halus
-  body.style.transition = "background 0.4s ease, color 0.4s ease";
+  // Cek preferensi dari localStorage saat halaman dimuat
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    setTheme(true);
+  } else {
+    setTheme(false);
+  }
+
+  // Event listener untuk tombol toggle
+  themeToggle.addEventListener('click', function() {
+    const isDark = body.classList.contains('dark');
+    setTheme(!isDark);
+  });
 });
+
+
+// ================================
+// ===== Efek Mengetik Hello + Nama =====
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+  const helloSpan = document.querySelector('.hello');
+  const nameSpan = document.querySelector('.name');
+  const cursor = document.querySelector('.cursor');
+
+  if (!helloSpan || !nameSpan || !cursor) return;
+
+  const helloText = "Hello, I'm ";
+  const nameText = "Nasya Eka Pratiwi";
+  let i = 0;
+  let j = 0;
+
+  function typeHello() {
+    if (i < helloText.length) {
+      helloSpan.textContent += helloText.charAt(i);
+      i++;
+      setTimeout(typeHello, 100);
+    } else {
+      setTimeout(typeName, 400);
+    }
+  }
+
+  function typeName() {
+    if (j < nameText.length) {
+      nameSpan.textContent += nameText.charAt(j);
+      j++;
+      setTimeout(typeName, 100);
+    }
+  }
+
+  typeHello(); // mulai mengetik
+});
+

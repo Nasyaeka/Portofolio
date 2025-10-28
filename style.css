@@ -1,125 +1,111 @@
 /* =========================================
-   ===== MODE TERANG (DEFAULT) =====
+   ===== GENERAL STYLES =====
 ========================================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; 
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #333;
   background-color: #fff;
-  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #111;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #555;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+  color: #f48fb1;
+}
+
+/* Tombol umum */
+.project-btn, .cta-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
 /* =========================================
-   ===== MODE GELAP =====
-========================================= */
-body.dark-mode {
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-}
-
-body.dark-mode .navbar {
-  background: #2a2a2a;
-  color: #fff;
-}
-
-body.dark-mode nav a {
-  color: #ddd;
-}
-
-body.dark-mode nav a:hover {
-  color: #fff;
-}
-
-body.dark-mode .theme-toggle {
-  color: #fff;
-}
-
-/* =========================================
-   ===== NAVBAR =====
+   ===== NAVBAR (MODE TERANG DEFAULT) =====
 ========================================= */
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 6%;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 1.2rem 6%;
+  backdrop-filter: blur(12px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
-  gap: 1rem;
+  transition: background 0.4s ease, box-shadow 0.4s ease, color 0.3s ease;
 }
 
-/* ===== Logo ===== */
+/* =========================================
+   ===== MODE GELAP (UNGU ELEGAN) =====
+========================================= */
+body.dark .navbar {
+  background: linear-gradient(135deg, rgba(35, 0, 60, 0.95), rgba(70, 0, 100, 0.95));
+  box-shadow: 0 4px 15px rgba(189, 147, 249, 0.25);
+  backdrop-filter: blur(14px);
+}
+
+/* ===== LOGO ===== */
 .logo {
   font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
   font-weight: 700;
-  font-size: 1.5rem;
   color: #f48fb1;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   margin: 0;
-}
-
-.logo i {
-  color: #f48fb1;
-}
-
-/* ===== Menu ===== */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.8rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+.logo i {
+  font-size: 1.5rem;
   color: #f48fb1;
+  transition: color 0.3s ease;
 }
 
-/* ===== Tombol Gelap/Terang ===== */
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  color: #333;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.3s ease;
-  margin-left: 1rem;
+/* ===== LOGO MODE GELAP ===== */
+body.dark .logo,
+body.dark .logo i {
+  color: #cdb4ff; /* ungu muda lembut */
 }
 
-.theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-/* =========================================
-   ===== TOGGLE MENU (UNTUK MOBILE) =====
-========================================= */
+/* ===== MENU TOGGLE ===== */
 .menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  align-items: flex-end;
   cursor: pointer;
+  gap: 5px;
+  transition: transform 0.3s ease;
 }
 
 .menu-toggle span {
+  display: block;
   width: 26px;
   height: 3px;
   background: #f48fb1;
@@ -127,7 +113,12 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* Animasi toggle X */
+/* Tema gelap untuk toggle */
+body.dark .menu-toggle span {
+  background: #b388ff; /* ungu pastel */
+}
+
+/* Animasi toggle jadi X */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -138,32 +129,69 @@ nav a:hover {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* ===== MENU NAVIGATION ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* 👉 jarak lebih proporsional dan elegan */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+nav a:hover {
+  color: #f48fb1;
+}
+
+/* ===== MODE GELAP UNTUK LINK ===== */
+body.dark nav a {
+  color: #f0eaff;
+}
+
+body.dark nav a:hover {
+  background: rgba(189, 147, 249, 0.15);
+  color: #cdb4ff;
+}
+
+/* ===== TOMBOL THEME TOGGLE ===== */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: #f48fb1;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: #ffb6c1;
+  transform: rotate(15deg);
+}
+
+/* Tema gelap untuk tombol theme */
+body.dark .theme-toggle-btn {
+  color: #cdb4ff;
+}
+
+body.dark .theme-toggle-btn:hover {
+  color: #b388ff;
+}
+
 /* =========================================
-   ===== RESPONSIVE NAVBAR =====
+   ===== RESPONSIVE MODE =====
 ========================================= */
 @media (max-width: 768px) {
-  .navbar {
-    position: relative;
-  }
-
-  /* Menu toggle aktif */
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    top: 1.2rem;
-    right: 1rem;
-  }
-
-  /* Tombol tema pindah ke kiri toggle */
-  .theme-toggle {
-    position: absolute;
-    top: 1.2rem;
-    right: 3.8rem;
-    font-size: 1.3rem;
-    z-index: 1100;
-  }
-
-  /* Menu dropdown */
   nav {
     position: absolute;
     top: 70px;
@@ -175,6 +203,7 @@ nav a:hover {
     flex-direction: column;
     padding: 1rem 1.2rem;
     animation: slideIn 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
   }
 
   nav.show {
@@ -188,13 +217,29 @@ nav a:hover {
   }
 
   nav a {
-    padding: 0.5rem 0.8rem;
-    border-radius: 8px;
     color: #333;
   }
 
   nav a:hover {
     background: rgba(244, 143, 177, 0.2);
+  }
+
+  /* ===== MODE GELAP MOBILE ===== */
+  body.dark nav {
+    background: rgba(35, 0, 60, 0.95);
+    box-shadow: 0 4px 15px rgba(189, 147, 249, 0.25);
+  }
+
+  body.dark nav a {
+    color: #f5f0ff;
+  }
+
+  body.dark nav a:hover {
+    background: rgba(189, 147, 249, 0.15);
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   @keyframes slideIn {
@@ -208,6 +253,8 @@ nav a:hover {
     }
   }
 }
+
+
 
 
 /* =========================================
@@ -238,6 +285,45 @@ nav a:hover {
   margin-bottom: 1.2rem;
   line-height: 1.3;
 }
+
+.typing-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* warna teks */
+.typing-heading .hello {
+  color: #111; /* hitam */
+}
+
+.typing-heading .name {
+  color: #f48fb1; /* pink */
+  font-weight: 800;
+}
+
+/* kursor berkedip */
+.typing-heading .cursor {
+  display: inline-block;
+  width: 0.12em;
+  height: 1em;
+  vertical-align: -0.12em;
+  margin-left: 0.1em;
+  background-color: currentColor;
+  animation: blink 0.8s steps(1) infinite;
+}
+
+/* animasi kedip */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
 
 .hero h1 span {
   color: #f48fb1;
@@ -540,17 +626,121 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
+/* ===== Variabel warna (pastikan ini ada di awal CSS) ===== */
+:root {
+  --bg-color: #fff;
+  --text-color: #222;
+  --text-secondary: #555;
+  --accent-color: #f48fb1; /* pink terang */
+  --card-bg: #fff0f5; /* pink lembut untuk edu-item */
+}
+
+body.dark {
+  --bg-color: #1c1c2b;
+  --text-color: #eee;
+  --text-secondary: #bbb;
+  --accent-color: #e573b9; /* pink gelap */
+  --card-bg: #3a2a3f; /* pink gelap untuk edu-item di dark mode */
+}
+
+/* ===== Education Section ===== */
+.education {
+  padding: 100px 10%;
+  background-color: var(--bg-color);
+  text-align: center; /* h2 dan subtitle tetap center */
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.education h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.education .subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+/* ===== Timeline ===== */
+.education-list {
+  position: relative;
+  margin: 0 auto;       /* tengahkan list */
+  padding-left: 40px;   /* ruang untuk garis timeline */
+  max-width: 600px;     /* supaya tidak terlalu lebar */
+}
+
+.education-list::before {
+  content: '';
+  position: absolute;
+  left: 20px; /* posisi garis timeline */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-color);
+}
+
+.edu-item {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center; /* h3 tetap center */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.edu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* lingkaran indikator */
+.edu-item::before {
+  content: '';
+  position: absolute;
+  left: -28px; /* sesuaikan dengan garis */
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 3px solid var(--bg-color);
+}
+
+.edu-item i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.3rem;
+}
+
+.edu-item h3 {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+  color: var(--text-color);
+}
+
+.edu-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 
 /* =========================================
-   ===== CONTACT SECTION =====
+   ===== CONTACT SECTION (Match Projects) =====
 ========================================= */
 .contact {
-  padding: 2.5rem 10% 2rem; /* atas, kiri-kanan, bawah */
+  padding: 2.5rem 10% 2rem;
   text-align: center;
+  background: #fff5f8; /* pink pucat */
 }
 
 .contact h2 {
   font-size: 2rem;
+  font-weight: 700;
+  color: #111;
   margin-bottom: 1rem;
 }
 
@@ -559,6 +749,7 @@ nav a:hover {
   margin-bottom: 2rem;
 }
 
+/* ===== Contact Cards ===== */
 .contact-cards {
   display: flex;
   flex-wrap: wrap;
@@ -567,26 +758,27 @@ nav a:hover {
 }
 
 .contact-card {
-  background: #fff0f5;
+  background: #ffffff;
   padding: 1rem 2rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 0.8rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-card:hover {
   background: #ffe6ef;
   transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 .contact-card a {
-  color: inherit;
+  color: #111;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .contact-card a:hover {
@@ -606,22 +798,21 @@ nav a:hover {
   transform: scaleX(-1);
 }
 
+/* ===== Contact Form ===== */
 .contact-form {
-  background: #fff0f6;
-  border: 1.5px solid #ffcce0;
+  background: #fff5f8; /* sama dengan section */
+  border: 1.5px solid #ffd9e7;
   border-radius: 20px;
   padding: 2.5rem;
   max-width: 550px;
-  margin: 2.5rem auto 1rem; /* ubah dari 2.5rem auto → 2.5rem auto 1rem */
+  margin: 2.5rem auto 0; /* hapus margin bawah */
   box-shadow: 0 6px 16px rgba(244, 143, 177, 0.15);
   box-sizing: border-box;
 }
 
-
-
 /* ===== Form Group Spacing ===== */
 .contact-form .form-group {
-  margin-bottom: 1.3rem; /* Jarak antar input */
+  margin-bottom: 1.3rem;
 }
 
 /* ===== Input & Textarea ===== */
@@ -659,7 +850,7 @@ nav a:hover {
   width: 100%;
   box-sizing: border-box;
   padding: 0.9rem 1.2rem;
-  background: linear-gradient(135deg, #f48fb1, #f06292);
+  background: #f48fb1;
   color: #fff;
   font-weight: 600;
   border: none;
@@ -667,11 +858,11 @@ nav a:hover {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
-  margin-top: 0.5rem; /* jarak tambahan dari input terakhir */
+  margin-top: 0.5rem;
 }
 
 .btn-send:hover {
-  background: linear-gradient(135deg, #ec407a, #f48fb1);
+  background: #ec407a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(236, 64, 122, 0.25);
 }
@@ -684,7 +875,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem 1rem;
-  margin-top: 3rem;
+  margin-top: 0; /* hapus spasi putih */
 }
 
 footer p {
@@ -719,6 +910,13 @@ footer p {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== RESET MARGIN / PADDING BROWSER ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 
 /* =========================================
    ===== RESPONSIVE DESIGN (SEMUA PERANGKAT) 
@@ -963,4 +1161,259 @@ footer p {
 
 
 
+/* =========================================
+   ===== MODE GELAP (UNGU-PINK ELEGAN) =====
+========================================= */
+
+body.dark {
+  background: radial-gradient(circle at top left, #1a001f, #0e0012 60%);
+  color: #f8eaff;
+  transition: background 0.6s ease, color 0.4s ease;
+}
+
+/* ===== TEKS ===== */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p {
+  color: #f8eaff;
+}
+
+/* ===== HERO SECTION ===== */
+body.dark .hero {
+  background: linear-gradient(135deg, #220033, #390050);
+}
+
+body.dark .typing-heading .hello {
+  color: #f3e8ff;
+}
+
+body.dark .typing-heading .name {
+  color: #cda4ff;
+  text-shadow: 0 0 10px rgba(205, 164, 255, 0.4);
+}
+
+/* ===== TOMBOL ===== */
+body.dark .project-btn {
+  background: linear-gradient(135deg, #a855f7, #c084fc);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+  transition: 0.3s;
+}
+
+body.dark .project-btn:hover {
+  background: linear-gradient(135deg, #c084fc, #e879f9);
+  transform: translateY(-2px);
+}
+
+body.dark .cta-btn {
+  border: 2px solid #c084fc;
+  color: #c084fc;
+  transition: 0.3s;
+}
+
+body.dark .cta-btn:hover {
+  background: linear-gradient(135deg, #a855f7, #d946ef);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(216, 70, 239, 0.4);
+}
+
+/* ===== PROFILE IMAGE ===== */
+body.dark .profile-img {
+  border: 4px solid #b388ff;
+  box-shadow: 0 0 35px rgba(187, 134, 252, 0.4);
+  animation: floatImage 4s ease-in-out infinite, glowPulseDark 3s ease-in-out infinite;
+}
+
+@keyframes glowPulseDark {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(187, 134, 252, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(216, 70, 239, 0.7);
+  }
+}
+
+/* ===== SKILLS SECTION ===== */
+body.dark .skills {
+  background: linear-gradient(135deg, #21002c, #340040);
+}
+
+body.dark .skill-card {
+  background: rgba(75, 0, 115, 0.4);
+  border: 1px solid rgba(187, 134, 252, 0.25);
+  box-shadow: 0 4px 20px rgba(155, 90, 255, 0.15);
+  transition: 0.3s;
+}
+
+body.dark .skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(216, 70, 239, 0.3);
+}
+
+body.dark .skill-card i {
+  color: #c084fc;
+}
+
+/* ===== PROJECTS SECTION ===== */
+body.dark .projects {
+  background: linear-gradient(135deg, #23002e, #360043);
+}
+
+body.dark .project-card {
+  background: rgba(60, 0, 90, 0.5);
+  border: 1px solid rgba(200, 140, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(180, 100, 255, 0.1);
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+body.dark .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(216, 70, 239, 0.25);
+}
+
+body.dark .project-card h3 {
+  color: #f3e8ff;
+}
+
+body.dark .description {
+  color: #e9d6ff;
+}
+
+body.dark .tech-tags span {
+  background: rgba(187, 134, 252, 0.15);
+  color: #d8b4fe;
+}
+
+body.dark .btn-view {
+  background: linear-gradient(135deg, #a855f7, #c084fc);
+  color: #fff;
+  transition: 0.3s;
+}
+
+body.dark .btn-view:hover {
+  background: linear-gradient(135deg, #c084fc, #e879f9);
+}
+
+/* ===== EDUCATION SECTION DARK MODE ===== */
+body.dark .education {
+  background: linear-gradient(135deg, #21002c, #350040);
+  color: #f3e8ff;
+  transition: background 0.6s ease, color 0.4s ease;
+}
+
+body.dark .education h2 {
+  color: #f8eaff;
+}
+
+body.dark .education .subtitle {
+  color: #d8b4fe;
+}
+
+/* ===== EDUCATION CARDS ===== */
+body.dark .edu-item {
+  background: rgba(75, 0, 115, 0.45);
+  border: 1px solid rgba(187, 134, 252, 0.2);
+  color: #f3e8ff;
+  box-shadow: 0 4px 15px rgba(155, 90, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+body.dark .edu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(216, 70, 239, 0.3);
+  background: rgba(105, 0, 160, 0.6);
+}
+
+body.dark .edu-item i {
+  color: #c084fc;
+}
+
+body.dark .edu-item h3 {
+  color: #f3e8ff;
+}
+
+body.dark .edu-item p {
+  color: #d8b4fe;
+}
+
+/* ===== CONTACT SECTION ===== */
+body.dark .contact {
+  background: linear-gradient(135deg, #21002c, #350040);
+}
+
+body.dark .contact-subtitle {
+  color: #d8b4fe;
+}
+
+body.dark .contact-card {
+  background: rgba(75, 0, 115, 0.45);
+  border: 1px solid rgba(187, 134, 252, 0.2);
+  color: #f3e8ff;
+  transition: 0.3s;
+}
+
+body.dark .contact-card:hover {
+  background: rgba(105, 0, 160, 0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 4px 14px rgba(216, 70, 239, 0.3);
+}
+
+body.dark .contact-card a:hover {
+  color: #c084fc;
+}
+
+/* ===== FORM ===== */
+body.dark .contact-form {
+  background: rgba(45, 0, 70, 0.8);
+  border: 1.5px solid rgba(187, 134, 252, 0.3);
+  box-shadow: 0 8px 25px rgba(155, 90, 255, 0.2);
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background-color: rgba(25, 0, 40, 0.9);
+  color: #f3e8ff;
+  border: 1.5px solid rgba(187, 134, 252, 0.4);
+}
+
+body.dark .contact-form input:focus,
+body.dark .contact-form textarea:focus {
+  border-color: #c084fc;
+  box-shadow: 0 0 8px rgba(200, 132, 252, 0.3);
+  background-color: rgba(55, 0, 80, 0.9);
+}
+
+body.dark .btn-send {
+  background: linear-gradient(135deg, #a855f7, #d946ef);
+  box-shadow: 0 4px 14px rgba(216, 70, 239, 0.3);
+  transition: 0.3s;
+}
+
+body.dark .btn-send:hover {
+  background: linear-gradient(135deg, #c084fc, #e879f9);
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+body.dark footer {
+  background: linear-gradient(135deg, #240033, #140020);
+  color: #f3e8ff;
+}
+
+body.dark .social-links a {
+  color: #c084fc;
+  transition: 0.3s;
+}
+
+body.dark .social-links a:hover {
+  color: #e879f9;
+  text-shadow: 0 0 10px rgba(216, 70, 239, 0.4);
+}
+
+/* ===== ANIMASI REVEAL ===== */
+body.dark .reveal {
+  transition: all 0.8s ease;
+}
 

@@ -22,45 +22,55 @@
 </head>
 
 <body>
-<header class="navbar">
+ <!-- ===== Navbar ===== -->
+ <header class="navbar">
   <h1 class="logo">
     <i class="fas fa-laptop-code"></i> Nasya's Portfolio
   </h1>
-
   <div class="menu-toggle" id="menu-toggle">
     <span></span>
     <span></span>
     <span></span>
-    <!-- Tambahkan icon dark/light di dalam toggle -->
-    <i id="theme-icon" class="fas fa-moon"></i>
   </div>
-
   <nav id="menu">
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#skills-section">Skills</a></li>
       <li><a href="#projects-section">Projects</a></li>
+      <li><a href="#education-section">Education</a></li>
       <li><a href="#contact-section">Contact</a></li>
+      <!-- Tombol toggle dark/light mode ditambahkan di sini -->
+      <li>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="fas fa-sun"></i> <!-- Ikon default: matahari untuk light mode -->
+        </button>
+      </li>
     </ul>
   </nav>
 </header>
 
-
-
   <!-- ===== Hero Section ===== -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Hello, I'm <span>Nasya Eka Pratiwi</span></h1>
-      <p>
-        Saya seorang pelajar yang memiliki minat besar dalam pengembangan web dan desain UI/UX. Saya senang mempelajari cara membuat
-        situs web yang fungsional sekaligus menarik secara visual. Saat ini, saya sedang mengembangkan keterampilan dalam 
-        HTML, CSS, JavaScript, dan berbagai framework front-end untuk menciptakan desain web yang modern dan responsif.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects-section" class="project-btn">View Projects</a>
-        <a href="#contact-section" class="cta-btn">Contact Me</a>
-      </div>
-    </div>
+  <h1 class="typing-heading" aria-label="Hello, I'm Nasya Eka Pratiwi">
+    <span class="hello"></span>
+    <span class="name"></span>
+    <span class="cursor" aria-hidden="true"></span>
+  </h1>
+
+  <p>
+    Saya seorang pelajar yang memiliki minat besar dalam pengembangan web dan desain UI/UX. 
+    Saya senang mempelajari cara membuat situs web yang fungsional sekaligus menarik secara visual. 
+    Saat ini, saya sedang mengembangkan keterampilan dalam HTML, CSS, JavaScript, dan berbagai 
+    framework front-end untuk menciptakan desain web yang modern dan responsif.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#projects-section" class="project-btn">View Projects</a>
+    <a href="#contact-section" class="cta-btn">Contact Me</a>
+  </div>
+</div>
+
 
     <div class="profile-container">
       <img src="profile.jpg" alt="Profile" class="profile-img">
@@ -71,7 +81,8 @@
   <main>
     <div id="skills-section" class="reveal"></div>
     <div id="projects-section" class="reveal"></div>
-    <div id="contact-section" class="reveal"></div>
+    <div id="education-section" class="reveal"></div>
+    <div id="contact-section" class="reveal"></div>    
   </main>
 
   <!-- ===== Footer ===== -->
