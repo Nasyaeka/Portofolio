@@ -60,11 +60,11 @@ p {
 }
 
 /* =========================================
-   ===== MODE GELAP (UNGU ELEGAN) =====
+   ===== MODE GELAP (PINK GELAP MAUVE ELEGAN) =====
 ========================================= */
 body.dark .navbar {
-  background: linear-gradient(135deg, rgba(35, 0, 60, 0.95), rgba(70, 0, 100, 0.95));
-  box-shadow: 0 4px 15px rgba(189, 147, 249, 0.25);
+  background: linear-gradient(135deg, rgba(59, 2, 25, 0.95), rgba(90, 11, 45, 0.95));
+  box-shadow: 0 4px 15px rgba(255, 126, 167, 0.25);
   backdrop-filter: blur(14px);
 }
 
@@ -75,6 +75,7 @@ body.dark .navbar {
   font-weight: 700;
   color: #f48fb1;
   display: flex;
+
   align-items: center;
   gap: 0.4rem;
   margin: 0;
@@ -90,7 +91,7 @@ body.dark .navbar {
 /* ===== LOGO MODE GELAP ===== */
 body.dark .logo,
 body.dark .logo i {
-  color: #cdb4ff; /* ungu muda lembut */
+  color: #ff9eb5; /* pink lembut mawar */
 }
 
 /* ===== MENU TOGGLE ===== */
@@ -115,8 +116,9 @@ body.dark .logo i {
 
 /* Tema gelap untuk toggle */
 body.dark .menu-toggle span {
-  background: #b388ff; /* ungu pastel */
+  background: #ff8ba0; /* pink rose lembut */
 }
+
 
 /* Animasi toggle jadi X */
 .menu-toggle.active span:nth-child(1) {
@@ -155,12 +157,12 @@ nav a:hover {
 
 /* ===== MODE GELAP UNTUK LINK ===== */
 body.dark nav a {
-  color: #f0eaff;
+  color: #ffe7ee; /* lembut */
 }
 
 body.dark nav a:hover {
-  background: rgba(189, 147, 249, 0.15);
-  color: #cdb4ff;
+  background: rgba(255, 158, 181, 0.15);
+  color: #ffafc2;
 }
 
 /* ===== TOMBOL THEME TOGGLE ===== */
@@ -181,11 +183,11 @@ body.dark nav a:hover {
 
 /* Tema gelap untuk tombol theme */
 body.dark .theme-toggle-btn {
-  color: #cdb4ff;
+  color: #ff9eb5;
 }
 
 body.dark .theme-toggle-btn:hover {
-  color: #b388ff;
+  color: #ffafc2;
 }
 
 /* =========================================
@@ -224,18 +226,19 @@ body.dark .theme-toggle-btn:hover {
     background: rgba(244, 143, 177, 0.2);
   }
 
+  
   /* ===== MODE GELAP MOBILE ===== */
   body.dark nav {
-    background: rgba(35, 0, 60, 0.95);
-    box-shadow: 0 4px 15px rgba(189, 147, 249, 0.25);
+    background: linear-gradient(135deg, rgba(59, 2, 25, 0.95), rgba(90, 11, 45, 0.95));
+    box-shadow: 0 4px 15px rgba(255, 126, 167, 0.25);
   }
 
   body.dark nav a {
-    color: #f5f0ff;
+    color: #ffe7ee;
   }
 
   body.dark nav a:hover {
-    background: rgba(189, 147, 249, 0.15);
+    background: rgba(255, 158, 181, 0.15);
   }
 
   .menu-toggle {
@@ -253,9 +256,6 @@ body.dark .theme-toggle-btn:hover {
     }
   }
 }
-
-
-
 
 /* =========================================
    ===== HERO SECTION (RAPIH & RESPONSIF) =====
@@ -434,6 +434,7 @@ body.dark .theme-toggle-btn:hover {
     box-shadow: 0 0 35px rgba(244, 143, 177, 0.7);
   }
 }
+
 
 
 
@@ -1162,12 +1163,13 @@ html, body {
 
 
 /* =========================================
-   ===== MODE GELAP (UNGU-PINK ELEGAN) =====
+   ===== MODE GELAP (PINK GELAP ELEGAN) =====
 ========================================= */
 
+/* ===== BODY ===== */
 body.dark {
-  background: radial-gradient(circle at top left, #1a001f, #0e0012 60%);
-  color: #f8eaff;
+  background: radial-gradient(circle at top left, #3b0219, #120007 65%);
+  color: #ffe7ee;
   transition: background 0.6s ease, color 0.4s ease;
 }
 
@@ -1176,240 +1178,212 @@ body.dark h1,
 body.dark h2,
 body.dark h3,
 body.dark p {
-  color: #f8eaff;
+  color: #ffe7ee;
+}
+
+/* ===== NAVBAR ===== */
+body.dark .navbar {
+  background: linear-gradient(135deg, rgba(59, 2, 25, 0.95), rgba(90, 11, 45, 0.95));
+  box-shadow: 0 4px 15px rgba(255, 126, 167, 0.25);
+  backdrop-filter: blur(14px);
+}
+
+/* ===== LOGO ===== */
+body.dark .logo,
+body.dark .logo i {
+  color: #ff9eb5;
+}
+
+/* ===== MENU LINK ===== */
+body.dark nav a {
+  color: #ffe7ee;
+}
+
+body.dark nav a:hover {
+  background: rgba(255, 158, 181, 0.15);
+  color: #ffafc2;
 }
 
 /* ===== HERO SECTION ===== */
 body.dark .hero {
-  background: linear-gradient(135deg, #220033, #390050);
+  background: linear-gradient(135deg, #4a0d27, #5a0b2d);
 }
 
 body.dark .typing-heading .hello {
-  color: #f3e8ff;
+  color: #ffd6df;
 }
 
 body.dark .typing-heading .name {
-  color: #cda4ff;
-  text-shadow: 0 0 10px rgba(205, 164, 255, 0.4);
-}
-
-/* ===== TOMBOL ===== */
-body.dark .project-btn {
-  background: linear-gradient(135deg, #a855f7, #c084fc);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
-  transition: 0.3s;
-}
-
-body.dark .project-btn:hover {
-  background: linear-gradient(135deg, #c084fc, #e879f9);
-  transform: translateY(-2px);
-}
-
-body.dark .cta-btn {
-  border: 2px solid #c084fc;
-  color: #c084fc;
-  transition: 0.3s;
-}
-
-body.dark .cta-btn:hover {
-  background: linear-gradient(135deg, #a855f7, #d946ef);
-  color: #fff;
-  box-shadow: 0 0 12px rgba(216, 70, 239, 0.4);
+  color: #ff9eb5;
+  text-shadow: 0 0 10px rgba(255, 158, 181, 0.4);
 }
 
 /* ===== PROFILE IMAGE ===== */
 body.dark .profile-img {
-  border: 4px solid #b388ff;
-  box-shadow: 0 0 35px rgba(187, 134, 252, 0.4);
-  animation: floatImage 4s ease-in-out infinite, glowPulseDark 3s ease-in-out infinite;
+  border: 4px solid #ff8ba0;
+  box-shadow: 0 0 35px rgba(255, 158, 181, 0.35);
+  animation: glowPulseDark 3s ease-in-out infinite;
 }
 
 @keyframes glowPulseDark {
   0%, 100% {
-    box-shadow: 0 0 25px rgba(187, 134, 252, 0.4);
+    box-shadow: 0 0 25px rgba(255, 158, 181, 0.3);
   }
   50% {
-    box-shadow: 0 0 45px rgba(216, 70, 239, 0.7);
+    box-shadow: 0 0 45px rgba(255, 126, 167, 0.6);
   }
+}
+
+/* ===== BUTTONS ===== */
+body.dark .project-btn,
+body.dark .btn-view {
+  background: linear-gradient(135deg, #b93160, #ff9eb5);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 126, 167, 0.25);
+  transition: 0.3s;
+}
+
+body.dark .project-btn:hover,
+body.dark .btn-view:hover {
+  background: linear-gradient(135deg, #ff8ba0, #ffafc2);
+  transform: translateY(-2px);
+}
+
+body.dark .cta-btn {
+  border: 2px solid #ff9eb5;
+  color: #ff9eb5;
+  transition: 0.3s;
+}
+
+body.dark .cta-btn:hover {
+  background: linear-gradient(135deg, #b93160, #ff8ba0);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 126, 167, 0.4);
 }
 
 /* ===== SKILLS SECTION ===== */
 body.dark .skills {
-  background: linear-gradient(135deg, #21002c, #340040);
+  background: linear-gradient(135deg, #42091f, #5a0b2d);
 }
 
 body.dark .skill-card {
-  background: rgba(75, 0, 115, 0.4);
-  border: 1px solid rgba(187, 134, 252, 0.25);
-  box-shadow: 0 4px 20px rgba(155, 90, 255, 0.15);
+  background: rgba(90, 11, 45, 0.45);
+  border: 1px solid rgba(255, 158, 181, 0.25);
+  box-shadow: 0 4px 20px rgba(255, 126, 167, 0.15);
   transition: 0.3s;
 }
 
 body.dark .skill-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(216, 70, 239, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 126, 167, 0.25);
 }
 
 body.dark .skill-card i {
-  color: #c084fc;
+  color: #ff9eb5;
 }
 
 /* ===== PROJECTS SECTION ===== */
 body.dark .projects {
-  background: linear-gradient(135deg, #23002e, #360043);
+  background: linear-gradient(135deg, #3f081b, #5a0b2d);
 }
 
 body.dark .project-card {
-  background: rgba(60, 0, 90, 0.5);
-  border: 1px solid rgba(200, 140, 255, 0.2);
-  box-shadow: 0 4px 14px rgba(180, 100, 255, 0.1);
+  background: rgba(90, 11, 45, 0.5);
+  border: 1px solid rgba(255, 158, 181, 0.2);
+  box-shadow: 0 4px 14px rgba(255, 126, 167, 0.1);
   backdrop-filter: blur(8px);
   transition: 0.3s;
 }
 
 body.dark .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(216, 70, 239, 0.25);
+  box-shadow: 0 8px 20px rgba(255, 126, 167, 0.25);
 }
 
 body.dark .project-card h3 {
-  color: #f3e8ff;
+  color: #ffe7ee;
 }
 
 body.dark .description {
-  color: #e9d6ff;
+  color: #ffd6df;
 }
 
 body.dark .tech-tags span {
-  background: rgba(187, 134, 252, 0.15);
-  color: #d8b4fe;
+  background: rgba(255, 158, 181, 0.15);
+  color: #ffafc2;
 }
 
-body.dark .btn-view {
-  background: linear-gradient(135deg, #a855f7, #c084fc);
-  color: #fff;
-  transition: 0.3s;
-}
-
-body.dark .btn-view:hover {
-  background: linear-gradient(135deg, #c084fc, #e879f9);
-}
-
-/* ===== EDUCATION SECTION DARK MODE ===== */
+/* ===== EDUCATION SECTION ===== */
 body.dark .education {
-  background: linear-gradient(135deg, #21002c, #350040);
-  color: #f3e8ff;
-  transition: background 0.6s ease, color 0.4s ease;
+  background: linear-gradient(135deg, #42091f, #5a0b2d);
+  color: #ffe7ee;
 }
 
-body.dark .education h2 {
-  color: #f8eaff;
-}
-
-body.dark .education .subtitle {
-  color: #d8b4fe;
-}
-
-/* ===== EDUCATION CARDS ===== */
 body.dark .edu-item {
-  background: rgba(75, 0, 115, 0.45);
-  border: 1px solid rgba(187, 134, 252, 0.2);
-  color: #f3e8ff;
-  box-shadow: 0 4px 15px rgba(155, 90, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: rgba(90, 11, 45, 0.45);
+  border: 1px solid rgba(255, 158, 181, 0.2);
+  color: #ffe7ee;
+  box-shadow: 0 4px 15px rgba(255, 126, 167, 0.15);
+  transition: 0.3s;
 }
 
 body.dark .edu-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(216, 70, 239, 0.3);
-  background: rgba(105, 0, 160, 0.6);
-}
-
-body.dark .edu-item i {
-  color: #c084fc;
-}
-
-body.dark .edu-item h3 {
-  color: #f3e8ff;
-}
-
-body.dark .edu-item p {
-  color: #d8b4fe;
+  box-shadow: 0 8px 25px rgba(255, 126, 167, 0.3);
+  background: rgba(120, 18, 55, 0.6);
 }
 
 /* ===== CONTACT SECTION ===== */
 body.dark .contact {
-  background: linear-gradient(135deg, #21002c, #350040);
-}
-
-body.dark .contact-subtitle {
-  color: #d8b4fe;
+  background: linear-gradient(135deg, #3b0219, #5a0b2d);
 }
 
 body.dark .contact-card {
-  background: rgba(75, 0, 115, 0.45);
-  border: 1px solid rgba(187, 134, 252, 0.2);
-  color: #f3e8ff;
-  transition: 0.3s;
+  background: rgba(90, 11, 45, 0.45);
+  border: 1px solid rgba(255, 158, 181, 0.2);
+  color: #ffe7ee;
 }
 
 body.dark .contact-card:hover {
-  background: rgba(105, 0, 160, 0.6);
-  transform: translateY(-6px);
-  box-shadow: 0 4px 14px rgba(216, 70, 239, 0.3);
-}
-
-body.dark .contact-card a:hover {
-  color: #c084fc;
+  background: rgba(120, 18, 55, 0.6);
+  box-shadow: 0 4px 14px rgba(255, 126, 167, 0.3);
 }
 
 /* ===== FORM ===== */
 body.dark .contact-form {
-  background: rgba(45, 0, 70, 0.8);
-  border: 1.5px solid rgba(187, 134, 252, 0.3);
-  box-shadow: 0 8px 25px rgba(155, 90, 255, 0.2);
+  background: rgba(60, 5, 30, 0.8);
+  border: 1.5px solid rgba(255, 158, 181, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 126, 167, 0.2);
 }
 
 body.dark .contact-form input,
 body.dark .contact-form textarea {
-  background-color: rgba(25, 0, 40, 0.9);
-  color: #f3e8ff;
-  border: 1.5px solid rgba(187, 134, 252, 0.4);
+  background-color: rgba(35, 0, 15, 0.9);
+  color: #ffe7ee;
+  border: 1.5px solid rgba(255, 158, 181, 0.4);
 }
 
 body.dark .contact-form input:focus,
 body.dark .contact-form textarea:focus {
-  border-color: #c084fc;
-  box-shadow: 0 0 8px rgba(200, 132, 252, 0.3);
-  background-color: rgba(55, 0, 80, 0.9);
-}
-
-body.dark .btn-send {
-  background: linear-gradient(135deg, #a855f7, #d946ef);
-  box-shadow: 0 4px 14px rgba(216, 70, 239, 0.3);
-  transition: 0.3s;
-}
-
-body.dark .btn-send:hover {
-  background: linear-gradient(135deg, #c084fc, #e879f9);
-  transform: translateY(-2px);
+  border-color: #ff9eb5;
+  box-shadow: 0 0 8px rgba(255, 158, 181, 0.3);
+  background-color: rgba(70, 5, 35, 0.9);
 }
 
 /* ===== FOOTER ===== */
 body.dark footer {
-  background: linear-gradient(135deg, #240033, #140020);
-  color: #f3e8ff;
+  background: linear-gradient(135deg, #2b0010, #3b0219);
+  color: #ffe7ee;
 }
 
 body.dark .social-links a {
-  color: #c084fc;
+  color: #ff9eb5;
   transition: 0.3s;
 }
 
 body.dark .social-links a:hover {
-  color: #e879f9;
-  text-shadow: 0 0 10px rgba(216, 70, 239, 0.4);
+  color: #ffafc2;
+  text-shadow: 0 0 10px rgba(255, 158, 181, 0.4);
 }
 
 /* ===== ANIMASI REVEAL ===== */
